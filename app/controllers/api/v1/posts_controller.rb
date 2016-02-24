@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Api::V1::PostsController < ApplicationController
 
   def index
     @posts = Post.all
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    render :show
+    render json: { message: "Employee Destroyed" }
   end
 
 end
